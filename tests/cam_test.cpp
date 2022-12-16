@@ -261,7 +261,7 @@ void run(const cv::Size &imageSize, const uint8_t framerate, const uint8_t mode)
                 disparity = (float)disparity / 16.0f;
                 depth_map = (float)M / disparity;
 
-                cv::threshold(disparity, maskdist, 70, 255, cv::THRESH_BINARY);
+                cv::threshold(disparity, maskdist, bt, 255, cv::THRESH_BINARY);
 
                 cv::meanStdDev(depth_map, mean, stddev, maskdist);
                 std::cout << mean << "\n";
